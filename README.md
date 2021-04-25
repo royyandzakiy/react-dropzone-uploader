@@ -1,6 +1,6 @@
 # Dropzone Uploader
 
-This is a simple implementation of the `react-dropzone-uploader` with [next.js](https://nextjs.org/), [typescript](https://www.typescriptlang.org/), [chakra-ui](https://chakra-ui.com/) which can be found [here](https://react-dropzone-uploader.js.org/)
+This is a simple implementation of the `react-dropzone-uploader` (source [here](https://react-dropzone-uploader.js.org/)) built on top of React using [next.js](https://nextjs.org/), [typescript](https://www.typescriptlang.org/), [chakra-ui](https://chakra-ui.com/).
 
 ## Getting Started
 - install [VSCode](https://code.visualstudio.com/)
