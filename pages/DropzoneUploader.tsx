@@ -40,7 +40,7 @@ const InputComponent = (props: IInputProps) => {
     );
 
     return (
-      <Box>
+      <label>
         {uploadContainer}
         <Input
           className={className}
@@ -56,7 +56,7 @@ const InputComponent = (props: IInputProps) => {
             target.value = null
           }}
         />
-      </Box>
+      </label>
 
     )
   }
