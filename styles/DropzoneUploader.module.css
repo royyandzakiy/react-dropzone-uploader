@@ -1,0 +1,35 @@
+/* =============== Uploader =============== */
+
+
+.dropzoneContainer {
+  text-align: center;
+}
+
+.uploadContainer {
+  /* width: 700px; */
+  padding: 70px;
+  border: 3px dashed rgba(0,0,0,.1);
+  text-align: center;
+  border-radius: 5px;
+}
+
+.uploadContainer:hover {
+  background-color: rgba(0,0,0,0.02);
+  cursor: pointer;
+}
+
+.uploadTextLight {
+  color: rgba(0,0,0,.3);
+}
+
+.uploadTextDark {
+  color: rgba(0,0,0,.7);
+}
+
+.uploadTextRed {
+  color: rgba(255, 0, 0, 0.7);
+}
+
+.uploadImg {
+  opacity: 0.2;
+}
