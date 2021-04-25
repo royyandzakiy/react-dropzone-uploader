@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import 'react-dropzone-uploader/dist/styles.css'
 import styles from '../styles/DropzoneUploader.module.css'
 import Dropzone, { IInputProps, ILayoutProps } from 'react-dropzone-uploader'
-import { Box, Image, Text, Input } from '@chakra-ui/react'
+import { Box, Image, Text, Input, FormLabel } from '@chakra-ui/react'
 
 const LayoutComponent = ( { previews, input, submitButton, dropzoneProps, files }: ILayoutProps ) => {
     return (
@@ -40,7 +40,7 @@ const InputComponent = (props: IInputProps) => {
     );
 
     return (
-      <label>
+      <FormLabel>
         {uploadContainer}
         <Input
           className={className}
@@ -56,7 +56,7 @@ const InputComponent = (props: IInputProps) => {
             target.value = null
           }}
         />
-      </label>
+      </FormLabel>
 
     )
   }
