@@ -1,12 +1,14 @@
 import React from 'react'
 import 'react-dropzone-uploader/dist/styles.css'
-import styles from '../styles/DropzoneUploader.module.css'
 import Dropzone, { IInputProps, ILayoutProps } from 'react-dropzone-uploader'
 import { Box, Image, Text, Input, FormLabel, VStack } from '@chakra-ui/react'
 
 const LayoutComponent = ( { previews, input, submitButton, dropzoneProps, files }: ILayoutProps ) => {
     return (
-        <Box {...dropzoneProps} className={styles.dropzoneContainer}>
+        <Box {...dropzoneProps}
+          className={'dropzoneContainer'}
+          textAlign='center'
+          >
             {input}
 
             {files.length > 0 && submitButton}
@@ -29,12 +31,24 @@ const InputComponent = (props: IInputProps) => {
     } = props
 
     const uploadContainer = (
-        <Box {...props} className={styles.uploadContainer}>
+        <Box {...props}
+          className={'uploadContainer'}
+          padding='60px'
+          alignItems='center'
+          alignSelf='center'
+          textAlign='center'
+          border='3px dashed rgba(0,0,0,.1)'
+          borderRadius='5px'
+          _hover={{
+            backgroundColor: 'rgba(0,0,0,.03)',
+            cursor: 'pointer',
+          }}
+        >
             <VStack>
-                <Image src="/upload.svg" className={styles.uploadImg} alt="logo" />
-                <Text as="p" className={styles.uploadTextDark}>Drop Files Here!</Text>
-                <Text as="p" className={styles.uploadTextLight}>Maximum size for a file is {maxSizeBytes / 1000000} MB, format .jpg, .jpeg</Text>
-                <Text as="p" className={files.length < maxFiles ? styles.uploadTextDark : styles.uploadTextRed}>{files.length}/{maxFiles}</Text>
+                <Image src="/upload.svg" opacity={'0.2'} alt="logo" />
+                <Text as="p" color={'rgba(0,0,0,.7)'}>Drop Files Here!</Text>
+                <Text as="p" color={'rgba(0,0,0,.3)'}>Maximum size for a file is {maxSizeBytes / 1000000} MB, format .jpg, .jpeg</Text>
+                <Text as="p" color={files.length < maxFiles ? 'rgba(0,0,0,.7)' : 'rgba(255,0,0,.7)'}>{files.length}/{maxFiles}</Text>
             </VStack>
         </Box>
     );
