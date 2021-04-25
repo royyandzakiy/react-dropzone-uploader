@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import 'react-dropzone-uploader/dist/styles.css'
 import styles from '../styles/DropzoneUploader.module.css'
 import Dropzone, { IInputProps, ILayoutProps } from 'react-dropzone-uploader'
-import { Box, Image, Text, Input, FormLabel } from '@chakra-ui/react'
+import { Box, Image, Text, Input, FormLabel, VStack } from '@chakra-ui/react'
 
 const LayoutComponent = ( { previews, input, submitButton, dropzoneProps, files }: ILayoutProps ) => {
     return (
@@ -29,14 +29,14 @@ const InputComponent = (props: IInputProps) => {
     } = props
 
     const uploadContainer = (
-        <>
         <Box {...props} className={styles.uploadContainer}>
-            <Image src="/upload.svg" className={styles.uploadImg} alt="logo" />
-            <Text as="p" className={styles.uploadTextDark}>Drop Files Here!</Text>
-            <Text as="p" className={styles.uploadTextLight}>Maximum size for a file is {maxSizeBytes / 1000000} MB, format .jpg, .jpeg</Text>
-            <Text as="p" className={files.length < maxFiles ? styles.uploadTextDark : styles.uploadTextRed}>{files.length}/{maxFiles}</Text>
+            <VStack>
+                <Image src="/upload.svg" className={styles.uploadImg} alt="logo" />
+                <Text as="p" className={styles.uploadTextDark}>Drop Files Here!</Text>
+                <Text as="p" className={styles.uploadTextLight}>Maximum size for a file is {maxSizeBytes / 1000000} MB, format .jpg, .jpeg</Text>
+                <Text as="p" className={files.length < maxFiles ? styles.uploadTextDark : styles.uploadTextRed}>{files.length}/{maxFiles}</Text>
+            </VStack>
         </Box>
-        </>
     );
 
     return (
